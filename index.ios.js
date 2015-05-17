@@ -40,8 +40,7 @@ var IDDCApp = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
-    fontFamily :'Helvetica'
+    flex: 1
   },
 });
 

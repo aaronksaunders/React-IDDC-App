@@ -22,7 +22,7 @@ var {
 
 CiGeoCodeAddressUtil.geoCodeAddress("370 Tompkins Ave, Brooklyn, NY 11216", 
     function(_results){
-      console.log(_results);
+      console.log(JSON.stringify(_results,null,2));
     });
 
 var moment = require('moment');
@@ -83,14 +83,14 @@ var ItemDetail = React.createClass({
             showMap: true,
             placeInformation : _placeInformation,
             annotations: [{
-                longitude: _placeInformation.coords.longitude,
-                latitude: _placeInformation.coords.latitude,
+                longitude: Number(_placeInformation.coords.longitude),
+                latitude: Number(_placeInformation.coords.latitude),
                 title: _placeInformation.address.FormattedAddressLines[0], 
                 subtitle : _placeInformation.address.FormattedAddressLines[1]
             }],
             mapRegion: {
-                longitude: _placeInformation.coords.longitude,
-                latitude: _placeInformation.coords.latitude,
+                longitude: Number(_placeInformation.coords.longitude),
+                latitude: Number(_placeInformation.coords.latitude),
                 latitudeDelta: .005,
                 longitudeDelta: .005
             }
